@@ -1,11 +1,5 @@
 <%@ page import="java.time.LocalDateTime" %>
-<%@ page import="java.time.LocalDate" %> <%--
-  Created by IntelliJ IDEA.
-  User: Rafał
-  Date: 2020-01-12
-  Time: 11:38
-  To change this template use File | Settings | File Templates.
---%>
+<%@ page import="java.time.LocalDate" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%! private long visitCounter = 0; %>
 <html>
@@ -13,15 +7,8 @@
     <title>Hello World!</title>
 </head>
 <body>
-<h1>
-    <% out.print("hello world!"); %>
-    <br>
-    Dzisiaj jest: <% String now = LocalDateTime.now().toString();
-        out.print(now);
-    %>
-    <% out.print(LocalDate.now().toString()); %>
-</h1>
-<p> Licznik odwiedzin: <%=++visitCounter%>
-</p>
+<p> Server name: ${pageContext.request.serverName}</p>
+<p> Server port: ${pageContext.request.serverPort}</p>
+<p> Request URI: ${ pageContext.request.requestURI}</p>
 </body>
 </html>
